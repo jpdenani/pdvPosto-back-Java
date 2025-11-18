@@ -31,6 +31,7 @@ public class Custo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;
+    //cada produto sempre estará associado a um custo existente
 
     public Custo() {}
 

@@ -7,11 +7,14 @@ import com.br.pdvpostodecombustivel.api.domain.entity.Produto;
 import com.br.pdvpostodecombustivel.api.domain.repository.CustoRepository;
 import com.br.pdvpostodecombustivel.api.domain.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+//injetar automaticamente os repositories dentro do service.
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
+//transformar listas usando stream
 
 @Service
 public class CustoService {
@@ -45,7 +48,7 @@ public class CustoService {
         );
 
         custo = repository.save(custo);
-        System.out.println("✅ Custo criado com sucesso! ID: " + custo.getId());
+        System.out.println(" Custo criado com sucesso! ID: " + custo.getId());
 
         return mapToResponse(custo);
     }
@@ -85,7 +88,7 @@ public class CustoService {
         custo.setDataProcessamento(req.dataProcessamento());
 
         custo = repository.save(custo);
-        System.out.println("✅ Custo atualizado com sucesso!");
+        System.out.println(" Custo atualizado com sucesso!");
 
         return mapToResponse(custo);
     }
@@ -99,7 +102,7 @@ public class CustoService {
         }
 
         repository.deleteById(id);
-        System.out.println("✅ Custo deletado com sucesso!");
+        System.out.println(" Custo deletado com sucesso!");
         return true;
     }
 
